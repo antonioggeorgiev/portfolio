@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
-import { InstagramIcon } from "@/components/icons/custom-icons";
+import { InstagramIcon, GithubIcon } from "@/components/icons/custom-icons";
 
 export enum ContactInfoItem {
   Email = "email",
@@ -7,6 +7,7 @@ export enum ContactInfoItem {
   Location = "location",
   Linkedin = "linkedin",
   Instagram = "instagram",
+  Github = "github",
 }
 
 export type ContactInfoItemType = {
@@ -34,5 +35,9 @@ export const contactInfo: Record<ContactInfoItem, ContactInfoItemType> = {
   [ContactInfoItem.Instagram]: {
     value: "https://www.instagram.com/toni.georgiev/",
     icon: <InstagramIcon className="h-5 w-5" />,
+  },
+  [ContactInfoItem.Github]: {
+    value: "https://github.com/antonioggeorgiev",
+    icon: <GithubIcon className="h-5 w-5" />,
   },
 };
