@@ -1,15 +1,24 @@
 import ProjectsCarousel from "@/components/custom/projects-carousel/index";
-import MeCard from "@/components/custom/me-section/index";
+import MeSection from "@/components/custom/me-section/index";
+import LayoutSection from "@/components/custom/layout/LayoutSection";
+import { LayoutSections } from "@/lib/layout";
+
 export default function Home() {
   return (
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col items-center gap-16 sm:items-start">
-        <section className="h-screen w-full p-8">
-          <MeCard />
-        </section>
-        <section className="h-screen w-full p-8">
+        <LayoutSection
+          id={LayoutSections.Me}
+          sectionBelowId={LayoutSections.Projects}
+        >
+          <MeSection />
+        </LayoutSection>
+        <LayoutSection
+          id={LayoutSections.Projects}
+          sectionAboveId={LayoutSections.Me}
+        >
           <ProjectsCarousel />
-        </section>
+        </LayoutSection>
       </main>
     </div>
   );

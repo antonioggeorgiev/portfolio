@@ -1,9 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import MeInfo from "./MeInfo";
 
 export default function MeSection() {
   return (
-    <div className="flex h-full w-full items-center justify-center">
+    <div className="relative flex h-full w-full items-center justify-center">
       <div className="flex h-full w-1/2 items-center justify-center">
         <Image
           src="/me.png"
