@@ -8,17 +8,14 @@ export default function ProjectsCarouselSection() {
   const [autoplay, setAutoplay] = useState(true);
 
   return (
-    <section className="w-full">
-      <div>
-        <div className="flex items-center justify-between">
-          <h1 className="text-4xl font-bold">Projects</h1>
-          <ProjectsAutoplaySwitch
-            autoplay={autoplay}
-            setAutoplay={setAutoplay}
-          />
-        </div>
+    <div className="w-full px-8">
+      <div className="flex items-center justify-between">
+        <h1 className="text-4xl font-bold">Projects</h1>
+        <ProjectsAutoplaySwitch autoplay={autoplay} setAutoplay={setAutoplay} />
       </div>
-      <ProjectsCarousel autoplay={autoplay} />
-    </section>
+      <div className="w-full ">
+        <ProjectsCarousel autoplay={autoplay} />
+      </div>
+    </div>
   );
 }
