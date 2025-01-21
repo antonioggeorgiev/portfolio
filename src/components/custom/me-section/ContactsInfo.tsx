@@ -24,19 +24,31 @@ export default function ContactsInfo() {
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
-          <ContactInfoItem contactInfo={contactInfo.email} showCopyButton />
-          <ContactInfoItem contactInfo={contactInfo.phone} showCopyButton />
+          <ContactInfoItem
+            contactInfo={contactInfo.email}
+            showCopyButton
+            index={0}
+          />
+          <ContactInfoItem
+            contactInfo={contactInfo.phone}
+            showCopyButton
+            index={1}
+          />
           <ContactInfoItem
             contactInfo={contactInfo.github}
             showCopyButton
+            index={2}
             onClick={() => {
               router.push(contactInfo.github.value);
             }}
           />
-          <ContactInfoItem contactInfo={contactInfo.location} />
+          <ContactInfoItem contactInfo={contactInfo.location} index={3} />
           <div className="flex items-center gap-2">
-            <ContactInfoItemIcon contactInfo={contactInfo.linkedin} />
-            <ContactInfoItemIcon contactInfo={contactInfo.instagram} />
+            <ContactInfoItemIcon contactInfo={contactInfo.linkedin} index={4} />
+            <ContactInfoItemIcon
+              contactInfo={contactInfo.instagram}
+              index={5}
+            />
           </div>
         </div>
       </CardContent>
