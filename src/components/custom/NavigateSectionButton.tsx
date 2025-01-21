@@ -2,6 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { ChevronSectionDirectionIcon } from "@/lib/layout";
+import { motion } from "framer-motion";
+import { useMemo } from "react";
 
 type Props = {
   sectionId: string;
@@ -19,17 +21,41 @@ export default function NavigateSectionButton({
     section?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const animate = useMemo(() => {
+    switch (direction) {
+      case "down":
+        return { y: [0, 10, 0] };
+      case "up":
+        return { y: [0, -10, 0] };
+      case "left":
+        return { x: [0, -10, 0] };
+      case "right":
+        return { x: [0, 10, 0] };
+    }
+  }, [direction]);
+
   const ChevronIcon = ChevronSectionDirectionIcon[direction];
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
+    <motion.div
       className={className}
-      onClick={scrollToSection}
-      asChild
+      animate={animate}
+      transition={{
+        y: {
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        },
+        x: {
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        },
+      }}
     >
-      <ChevronIcon className="h-10 w-10" />
-    </Button>
+      <Button variant="ghost" size="icon" onClick={scrollToSection} asChild>
+        <ChevronIcon className="h-10 w-10" />
+      </Button>
+    </motion.div>
   );
 }
