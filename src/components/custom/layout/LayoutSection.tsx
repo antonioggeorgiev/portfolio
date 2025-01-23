@@ -21,7 +21,7 @@ export default function LayoutSection({
     <section
       id={id}
       className={cn(
-        "relative flex h-screen w-full justify-center p-8",
+        "relative flex h-screen w-full snap-start justify-center px-8",
         className,
       )}
     >
@@ -29,7 +29,7 @@ export default function LayoutSection({
         <NavigateSectionButton
           sectionId={sectionAboveId}
           direction="up"
-          className="absolute top-8"
+          className="absolute top-6"
         />
       )}
       {children}
@@ -37,7 +37,7 @@ export default function LayoutSection({
         <NavigateSectionButton
           sectionId={sectionBelowId}
           direction="down"
-          className="absolute bottom-8"
+          className="absolute bottom-6"
         />
       )}
     </section>
