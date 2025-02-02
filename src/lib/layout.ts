@@ -18,5 +18,6 @@ export const ChevronSectionDirectionIcon = {
 
 export enum LayoutSections {
   Me = "me-section",
+  WorkingExperience = "working-experience-section",
   Projects = "projects-section",
 }
