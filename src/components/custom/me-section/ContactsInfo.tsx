@@ -30,24 +30,19 @@ export default function ContactsInfo() {
             index={0}
           />
           <ContactInfoItem
-            contactInfo={contactInfo.phone}
-            showCopyButton
-            index={1}
-          />
-          <ContactInfoItem
             contactInfo={contactInfo.github}
             showCopyButton
-            index={2}
+            index={1}
             onClick={() => {
               router.push(contactInfo.github.value);
             }}
           />
-          <ContactInfoItem contactInfo={contactInfo.location} index={3} />
+          <ContactInfoItem contactInfo={contactInfo.location} index={2} />
           <div className="flex items-center gap-2">
-            <ContactInfoItemIcon contactInfo={contactInfo.linkedin} index={4} />
+            <ContactInfoItemIcon contactInfo={contactInfo.linkedin} index={3} />
             <ContactInfoItemIcon
               contactInfo={contactInfo.instagram}
-              index={5}
+              index={4}
             />
           </div>
         </div>
