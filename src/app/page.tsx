@@ -1,24 +1,32 @@
-import ProjectsCarousel from "@/components/custom/projects-carousel/index";
-import MeSection from "@/components/custom/me-section/index";
-import LayoutSection from "@/components/custom/layout/LayoutSection";
+import ProjectsCarouselSection from "@/components/custom/projects-carousel/ProjectsCarouselSection";
+import MeSection from "@/components/custom/me-section/MeSection";
+import Layout from "@/components/custom/layout/LayoutSection";
 import { LayoutSections } from "@/lib/layout";
+import ExperienceSection from "@/components/custom/experience/ExperienceSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col items-center gap-16 sm:items-start">
-        <LayoutSection
+    <div className="h-screen max-h-screen snap-y snap-mandatory overflow-y-auto">
+      <main className="flex flex-col items-center sm:items-start">
+        <Layout
           id={LayoutSections.Me}
-          sectionBelowId={LayoutSections.Projects}
+          sectionBelowId={LayoutSections.WorkingExperience}
         >
           <MeSection />
-        </LayoutSection>
-        <LayoutSection
-          id={LayoutSections.Projects}
+        </Layout>
+        <Layout
+          id={LayoutSections.WorkingExperience}
           sectionAboveId={LayoutSections.Me}
+          sectionBelowId={LayoutSections.Projects}
         >
-          <ProjectsCarousel />
-        </LayoutSection>
+          <ExperienceSection />
+        </Layout>
+        <Layout
+          id={LayoutSections.Projects}
+          sectionAboveId={LayoutSections.WorkingExperience}
+        >
+          <ProjectsCarouselSection />
+        </Layout>
       </main>
     </div>
   );
